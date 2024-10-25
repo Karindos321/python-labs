@@ -74,7 +74,6 @@ class TextEditor:
         self.text.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.text.yview)
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = TextEditor(root)
-    root.mainloop()
+root = tk.Tk()
+app = TextEditor(root)
+root.mainloop()
