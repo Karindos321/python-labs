@@ -5,9 +5,9 @@ class Parcel:
 
     def __init__(self, sender, recipient, weight):
         if not sender or not recipient:
-            raise ValueError("Sender and recipient information is required")
+            raise ValueError("Необхідна інформація про відправника та одержувача")
         if weight > self.MAX_WEIGHT:
-            raise ValueError("Parcel exceeds maximum weight of 30kg")
+            raise ValueError("Посилка перевищує максимальну вагу 30 кг")
 
         self.tracking_number = str(uuid.uuid4())
         self.sender = sender
@@ -36,6 +36,6 @@ def track_parcel(tracking_number):
         if tracking_number in office.parcels:
             parcel = office.parcels[tracking_number]
             return parcel.status, "Postal Office"
-    raise ValueError("Parcel with given tracking number does not exist")
+    raise ValueError("Посилка з таким номером не існує")
 
-all_offices = [PostalOffice() for _ in range(10)]  # Приклад створення кількох відділень
+all_offices = [PostalOffice() for _ in range(10)]
