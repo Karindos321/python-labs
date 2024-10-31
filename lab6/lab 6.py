@@ -42,8 +42,7 @@ class TextEditor:
                 editor.text.insert('1.0', file.read())
 
     def save_file(self):
-        file_path = filedialog.asksaveasfilename(defaultextension=".txt",
-                                                 filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+        file_path = filedialog.asksaveasfilename(defaultextension=".txt",filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
         if file_path:
             with open(file_path, 'w', encoding='utf-8') as file:
                 file.write(self.text.get('1.0', tk.END))
